@@ -14,7 +14,7 @@ Alright, lets jump into it!
 Logging into newton
 --------------------------
 
-We are going to run everything from Newton so we are working in the same environment. Please log in now, if you haven't setup Newton yet, please follow the [Newton-Cluster-Setup-(Part I)](Newton-Cluster-Setup-(Part I).md) tutorial to get setup.
+We are going to run everything from Newton so we are working in the same environment. Please log in now, if you haven't setup Newton yet, please follow the [Newton-Cluster-Setup-(Part-I)](Newton-Cluster-Setup-(Part-I).md) tutorial to get setup.
 
 Connect to the UCF VPN. Then, open a PowerShell (Windows 10) or Terminal (Linux/macOS) prompt now, and type:
 
