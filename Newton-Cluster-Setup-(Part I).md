@@ -1,4 +1,4 @@
-# SSH Newton Setup (Part I)
+# SSH Newton Setup
 Author: [@brandons209](https://github.com/brandons209)
 
 
