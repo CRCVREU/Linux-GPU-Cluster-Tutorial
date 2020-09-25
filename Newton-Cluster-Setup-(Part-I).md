@@ -6,7 +6,7 @@ This short guide will get your SSH keys decrypted and your environment setup so 
 
 This guide assumes:
 
-1. You setup your UCF VPN and it is connected.
+1. You setup your [UCF VPN](https://github.com/CRCVREU/UCF-VPN-Installation) and it is connected.
 2. You can open a PowerShell/Terminal prompt.
   - [Click here for a cheat sheet for Linux Terminal commands](https://cheatography.com/davechild/cheat-sheets/linux-command-line/)
   - [Alternate Cheat Sheet](https://phoenixnap.com/kb/wp-content/uploads/2020/02/linux-commands-cheat-sheet-phoenixnap.pdf)
