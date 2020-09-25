@@ -1,4 +1,7 @@
 # Basics of the Command Line
+
+Author: [@brandons209](https://github.com/brandons209)
+
 modified from [this](https://github.com/onyxfish/command-line-tutorial/blob/master/README.md) tutorial.
 
 This tutorial will give a brief introduction to the Unix *(Unix is an umbrella for Linux/macOS/android and other systems)* command line. For purposes of this introduction **command line**, **shell**, **terminal** and **bash** are all the same thing. There are specific, technical meanings for each of these words, but for now they don't really matter.
