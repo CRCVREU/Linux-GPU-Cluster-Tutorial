@@ -543,7 +543,7 @@ One of the most common things you may need to do is grab a file from the interne
 To do this, we use the `curl` command. The `curl` program allows making pretty much any type of http request you do in browsers. You can use to make scripts to click through websites, download files, and respond to APIs! Lets use it below to download the file.
 
 ```bash
-$ curl -o ulysses.txt http://www.gutenberg.org/cache/epub/4300/pg4300.txt
+$ curl -o ulysses.txt https://github.com/CRCVREU/Linux-GPU-Cluster-Tutorial/raw/master/ulysses.txt
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100 1536k  100 1536k    0     0   736k      0  0:00:02  0:00:02 --:--:--  737k
@@ -554,17 +554,23 @@ The ``-o`` **flag** allows us to specify the an output filename for the download
 There is also another common program that is made more specifically for downloading files, and thats called `wget`. This, as the name implies (web get) will get files from the web.
 
 ```bash
-$ wget http://www.gutenberg.org/cache/epub/4300/pg4300.txt -O ulysses.txt
---2020-05-27 01:42:47--  http://www.gutenberg.org/cache/epub/4300/pg4300.txt
-Resolving www.gutenberg.org (www.gutenberg.org)... 152.19.134.47, 2610:28:3090:3000:0:bad:cafe:47
-Connecting to www.gutenberg.org (www.gutenberg.org)|152.19.134.47|:80... connected.
+$ wget https://github.com/CRCVREU/Linux-GPU-Cluster-Tutorial/raw/master/ulysses.txt -O ulysses.txt
+--2021-06-05 04:24:46--  https://github.com/CRCVREU/Linux-GPU-Cluster-Tutorial/raw/master/ulysses.txt
+Loaded CA certificate '/etc/ssl/certs/ca-certificates.crt'
+Resolving github.com (github.com)... 140.82.114.3
+Connecting to github.com (github.com)|140.82.114.3|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://raw.githubusercontent.com/CRCVREU/Linux-GPU-Cluster-Tutorial/master/ulysses.txt [following]
+--2021-06-05 04:24:47--  https://raw.githubusercontent.com/CRCVREU/Linux-GPU-Cluster-Tutorial/master/ulysses.txt
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.111.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
 HTTP request sent, awaiting response... 200 OK
-Length: 660209 (645K) [text/plain]
+Length: 655658 (640K) [application/octet-stream]
 Saving to: ‘ulysses.txt’
 
-ulysses.txt                                100%[========================================================================================>] 644.74K  1.98MB/s    in 0.3s    
+ulysses.txt                                100%[=======================================================================================>] 640.29K  --.-KB/s    in 0.1s    
 
-2020-05-27 01:42:48 (1.98 MB/s) - ‘ulysses.txt’ saved [660209/660209]
+2021-06-05 04:24:47 (5.94 MB/s) - ‘ulysses.txt’ saved [655658/655658]
 ```
 
 The ``-O`` **flag** is a capital `O` compared to the `curl` command to specify output file name.
@@ -575,6 +581,29 @@ Browsing output
 Of all the data formats you might work with: spreadsheets, databases, images; the command line has a particularly robust set of tools for working with **text**. Text in this case means **plain text**, not Word documents, RTF or any other format.
 
 Let's us the the ``cat`` **command** to print the contents of our text file:
+
+```
+$ cat ulysses.txt
+
+[tons of garbabled nonsense]
+```
+
+**Diaster!**
+That doesn't look like a text file! Sometimes, when downloading files from the web, or even ones found in programs, it is not obvious what the file type might be (since files may have no extension), or the files may have the wrong extension. We saved this file thinking it was a text file, but as we saw it is not. Let's use the ``file`` **command** to find out what the file type is for this file.
+
+```
+$ file ulysses.txt
+ulysses.txt: gzip compressed data, was "ulysses.txt", last modified: Sat Jun  5 08:23:08 2021, from Unix, original size modulo 2^32 1539947
+```
+
+The file command will read the headers and metadata of the file to determine what information it can about it. As we see here, the file is actually a compressed file using the gzip format. Now that we know this, let us use ``gzip`` to decompress it so we can read it. For gzip to decompress a file, it needs to have the **.gz** extension, so lets rename the file then decompress.
+
+```
+$ mv ulysses.txt ulysses.txt.gz
+$ gzip -d ulysses.txt.gz
+```
+
+Now, the file should have been decompressed **in place**, meaning it removed the compressed version and now we only have the decompressed version called ``ulysses.txt``. Now that we solved this problem, lets move back to the ``cat`` command!
 
 ```
 $ cat ulysses.txt
