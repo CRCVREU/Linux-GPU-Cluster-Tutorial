@@ -112,7 +112,7 @@ Aborted (core dumped)
 You might get an `Aborted (core dumped)` error when running this. This is because anaconda needs more system resources like CPU to run then we are currently using. This ties into the next section and allocating resources for programs, for now just run this to create the environment.
 
 ```bash
-$ srun conda create -n ml python=3.8
+$ srun --time=03:00:00 conda create -n ml python=3.8
 ```
 
 Press enter once all the packages that it will install shows up, and anaconda will download all the libraries it needs and setup your environment.
@@ -132,17 +132,17 @@ Here are some basic libraries you might need (remember to use srun if the conda 
 
 Graphing:
 ```bash
-$ conda install -c conda-forge matplotlib
+$ srun --time=03:00:00 conda install -c conda-forge matplotlib
 ```
 
 PyTorch:
 ```bash
-$ conda install pytorch torchvision cudatoolkit=10.2 -c pytorch
+$ srun --time=03:00:00 conda install pytorch torchvision cudatoolkit=10.2 -c pytorch
 ```
 
 Tensorflow/Keras:
 ```bash
-$ conda install -c anaconda tensorflow-gpu
+$ srun --time=03:00:00 conda install -c anaconda tensorflow-gpu
 ```
 
 Now that our environment is setup, lets learn how to run our programs using Newton's CPU and GPU resources.
