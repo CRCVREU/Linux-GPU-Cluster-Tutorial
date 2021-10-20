@@ -8,7 +8,7 @@ This tutorial will give a brief introduction to the Unix *(Unix is an umbrella f
 
 The main takeaways is becoming familiar with the command line, folder/file pathing, I/O redirection, and how to run programs. This is by no means an exhaustive tutorial, there are a lot of nuances and much, much customization and scripts that can automate a lot of things, but for now we will keep it simple.
 
-**[You should open up this cheat sheet now](files/cheat-sheet.pdf)** as it has the commands will be covering in a quick one page reference sheet.
+**[You should open up this cheat sheet now](https://cheatography.com/davechild/cheat-sheets/linux-command-line/)** as it has the commands will be covering in a quick one page reference sheet.
 
 **I also highly recommend** doing this [quick course](https://www.codecademy.com/learn/learn-the-command-line) from codecademy that gives a more in depth dive into the Unix command line.
 
